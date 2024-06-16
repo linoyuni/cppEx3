@@ -27,6 +27,7 @@ int Player::getPlayerID(){
 
 std::string Player::getColor(){
     return this->color;
+}
 
 int Player::getVictoryPoints(){
     return this->victoryPoints;
@@ -146,18 +147,19 @@ void Player::addRoad(){
 
 void Player::setSettlements(int settlements){
     this->settlements = settlements;
+    this->victoryPoints = settlements;
 }
 
 void Player::addSettlement(){
     this->settlements++;
+    this->victoryPoints++;
 }
 
-void Player::setCities(int cities){
-    this->cities = cities;
-}
 
 void Player::addCity(){
     this->cities++;
+    this->settlements--;
+    this->victoryPoints++;
 }
 
 void Player::setLongestRoad(bool longestRoad){
